@@ -1,4 +1,4 @@
-### Xenon Code License (XCL)
+### Dodo Code License (XCL)
 
 1. **Ownership and Permissions**
 
