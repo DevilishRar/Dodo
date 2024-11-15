@@ -1,0 +1,26 @@
+### Xenon Code License (XCL)
+
+1. **Ownership and Permissions**
+
+   This code is exclusively owned by Devilishrar (the "Creator"). No person, entity, or organization is permitted to use, reproduce, modify, distribute, or display this code or any part thereof without explicit written permission from the Creator.
+
+2. **Usage Restrictions**
+
+   Unauthorized use, modification, reproduction, or distribution of this code is strictly prohibited. Any attempt to use or adapt this code in any form, for personal, private, or commercial purposes, without the Creator’s explicit permission, will be considered a violation of this license.
+
+3. **Transfer of Rights**
+
+   The Creator may grant usage rights, ownership, or contributor access to specific individuals or entities at their sole discretion. Such rights are valid only if they are expressly granted by the Creator in writing. No other form of consent or assumption of permission will be considered valid under this license.
+
+4. **Legal Consequences of Unauthorized Use**
+
+   Unauthorized use, reproduction, or distribution of this code may result in legal action. The Creator reserves the right to seek damages, including but not limited to statutory, compensatory, and punitive damages, from any party that infringes upon the rights established in this license.
+
+5. **Permitted Use and Transfer of Access**
+
+   Authorized individuals who receive written permission from the Creator may use the code under specific terms set by the Creator. The permitted use is non-transferable and non-sublicensable unless otherwise stated. Only the Creator may transfer or delegate access rights.
+
+6. **Disclaimer**
+
+   This code is provided "as-is," and the Creator makes no warranties, either express or implied, regarding the code’s functionality, performance, or suitability for any purpose. The Creator is not responsible for any damages or liabilities that may arise from its use, even by authorized users.
+

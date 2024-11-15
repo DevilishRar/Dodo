@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info - DoDo Cheats</title>
+  <link rel="icon" type="image/png" href="/logo.png"/>
+  <meta content="DoDo Info" property="og:title" />
+  <meta content="This is the Info Page" property="og:description" />
+  <meta content="https://getdodo.vercel.app" property="og:url" />
+  <meta content="logo.png" property="og:image" />
+  <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0E1218;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .info-heading {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 13px 16.5px rgba(0, 0, 0, 0.25);
+      margin-bottom: 20px;
+    }
+
+    .info-description {
+      font-size: 1.25rem;
+      font-weight: 500;
+      background: linear-gradient(88.93deg, #2F2F2F 10.05%, #4F4F4F 89.95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 13px 16.5px rgba(0, 0, 0, 0.25);
+      margin-bottom: 30px;
+      max-width: 800px;
+    }
+
+    .back-button {
+      background: linear-gradient(85.41deg, #BB4F3C 8.76%, #1A1A1A 91.24%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 48.4px -2px #BB4F3C;
+      border-radius: 29px;
+      padding: 12px 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(85.41deg, #F9826D 8.76%, #2E2E2E 91.24%);
+      color: #FFF;
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .info-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background-color: #F9826D;
+      opacity: 0.34;
+      filter: blur(150px);
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .info-glow1 {
+      top: 10%;
+      left: 20%;
+    }
+
+    .info-glow2 {
+      top: 80%;
+      left: 70%;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="info-glow info-glow1"></div>
+  <div class="info-glow info-glow2"></div>
+
+  <h1 class="info-heading">About DoDo Cheats</h1>
+  <p class="info-description">
+    DoDo Cheats provides advanced tools for gamers, including cheat clients for popular games such as Overwatch and PUBG. 
+    Our software ensures superior performance and game enhancements, offering features like custom aimpoint, player visibility, 
+    and much more. Join our Discord to explore more about our products and become part of the DoDo community.
+  </p>
+  <a href="index.html" class="back-button">Go Back to Home</a>
+</body>
+</html>
