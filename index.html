@@ -440,5 +440,52 @@
             <img src="discord.png" alt="Discord Showcase">
         </div>
     </div>
+    <script>
+    function addBackgroundElements(elementClass, numElements) {
+        const body = document.body;
+
+        const totalHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+
+        for (let i = 0; i < numElements; i++) {
+            const element = document.createElement('div');
+            element.className = elementClass;
+
+            element.style.left = `${Math.random() * window.innerWidth}px`;
+            element.style.top = `${Math.random() * totalHeight}px`;
+
+            if (elementClass === 'glow-star') {
+                element.style.width = `${Math.random() * 3 + 1}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.6)';
+                element.style.filter = 'blur(1px)';
+                element.style.position = 'absolute';
+            } else if (elementClass === 'glow-sphere') {
+                element.style.width = `${Math.random() * 150 + 50}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.2)';
+                element.style.filter = 'blur(50px)';
+                element.style.position = 'absolute';
+            }
+
+            body.appendChild(element);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        addBackgroundElements('glow-star', 70);
+        addBackgroundElements('glow-sphere', 10);
+    });
+
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.glow-star, .glow-sphere').forEach(el => el.remove());
+        
+        addBackgroundElements('glow-star', 70);
+        addBackgroundElements('glow-sphere', 10);
+    });
+</script>
+
 </body>
 </html>
