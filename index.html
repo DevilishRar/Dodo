@@ -1,399 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoDo Cheats</title>
-  <link rel="icon" type="image/png" href="/logo.png"/>
-  <meta content="DoDo Cheats" property="og:title" />
-  <meta content="This is the Main Page" property="og:description" />
-  <meta content="https://getdodo.vercel.app" property="og:url" />
-  <meta content="logo.png" property="og:image" />
-  <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
-  <meta name="twitter:card" content="summary_large_image">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoDo Software</title>
+    <link rel="icon" type="image/png" href="/logo.png"/>
+    <meta content="DoDo Cheats" property="og:title" />
+    <meta content="This is the Main Page" property="og:description" />
+    <meta content="https://getdodo.vercel.app" property="og:url" />
+    <meta content="logo.png" property="og:image" />
+    <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #101010;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-    body {
-      background-color: #0E1218;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
+        .navbar {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 70px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1.5px solid #6C2323;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25), inset 0px 0px 8px #EC3939;
+            backdrop-filter: blur(3px);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: url('logo.png') no-repeat center center;
+            background-size: contain;
+            border-radius: 50%;
+            border: 1px solid #6C2323;
+        }
 
-    .bg-glow {
-      position: absolute;
-      background-color: #F9826D;
-      opacity: 0.34;
-      filter: blur(146.1px);
-      border-radius: 50%;
-      transition: transform 2s ease;
-    }
+        .brand-text {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 900;
+            background: conic-gradient(from -79.49deg at 48.54% 52.94%, #6A0000 0deg, #810000 82.8deg, #910000 136.8deg, #BBBBBB 192.6deg, #CF1313 268.2deg, #610000 360deg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .ellipse1, .ellipse2, .ellipse3, .ellipse4, .ellipse5, .ellipse6 {
-      width: 300px;
-      height: 300px;
-    }
+        .nav-tabs {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .main-buttons .button {
-      display: inline-block;
-      background: linear-gradient(85.41deg, #BB4F3C 8.76%, #1A1A1A 91.24%);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 48.4px -2px #BB4F3C;
-      border-radius: 29px;
-      padding: 12px 50px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #000;
-      margin-right: 15px;
-      border: 1px solid rgba(70, 70, 70, 0.3);
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-      text-align: center;
-      text-decoration: none;
-    }
+        .tab {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
 
-    .main-buttons .button:hover {
-      background: linear-gradient(85.41deg, #F9826D 8.76%, #2E2E2E 91.24%);
-      color: #FFF;
-      transform: translateY(-5px) scale(1.05);
-    }
+        .discord-btn {
+            padding: 10px 20px;
+            background: #EC3939;
+            border: 1px solid #6C2323;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
 
-    .discord-purchase-button {
-      background: linear-gradient(261.75deg, #517FC5 11.79%, #273D5F 88.21%);
-      border-radius: 35px;
-      padding: 10px 20px;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: white;
-      display: inline-block;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s ease;
-      text-decoration: none;
-    }
+        .divider {
+            width: 100%;
+            max-width: 1121px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(199, 0, 0, 0) 0%, #610000 50%, rgba(199, 0, 0, 0) 100%);
+            margin: 40px auto;
+        }
 
-    .discord-purchase-button:hover {
-      background: linear-gradient(261.75deg, #4a6ba6 11.79%, #1f2c4d 88.21%);
-      transform: translateY(-5px) scale(1.05);
-    }
+        .main-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1060px;
+            margin: 60px auto;
+        }
 
-    .navbar {
-      background: rgba(21, 27, 37, 0.39);
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), inset 0 0 78.2px -51px #F9826D;
-      backdrop-filter: blur(24.15px);
-      border-radius: 100px;
-      width: 65%;
-      max-width: 1100px;
-      margin: 8px auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      height: 55px;
-    }
+        .main-content {
+            width: 50%;
+        }
 
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .main-content h1 {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 46px;
+        }
 
-    .navbar-logo-circle {
-      width: 38px;
-      height: 38px;
-      background-color: #F9826D;
-      border-radius: 50%;
-    }
+        .main-content p {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #3D3D3D;
+            line-height: 25px;
+            letter-spacing: -0.05em;
+        }
 
-    .navbar-title {
-      font-weight: 600;
-      font-size: 1.5rem;
-    }
+        .purchase-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background: #EC3939;
+            border: 1px solid #6C2323;
+            border-radius: 14px;
+            text-decoration: none;
+        }
 
-    .navbar-links a, .discord-button a {
-      color: #FFFFFF;
-      font-weight: 500;
-      margin: 0 10px;
-      font-size: 1.25rem;
-      text-decoration: none;
-    }
+        .video-player {
+            width: 465px;
+            height: 266px;
+            background: black;
+            border: 1px solid #6C2323;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px #EC3939;
+            border-radius: 21px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .discord-button {
-      background-color: #517FC5;
-      border-radius: 27px;
-      padding: 8px 18px;
-      font-weight: 800;
-      text-align: center;
-    }
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-    .main-content {
-      max-width: 1123px;
-      margin: 50px auto;
-      padding: 20px;
-      display: flex;
-      gap: 50px;
-      align-items: flex-start;
-      color: white;
-    }
+        .games-section {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-    .main-heading {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.1;
-      text-shadow: 0 13px 16.5px rgba(0, 0, 0, 0.25);
-      margin-bottom: 20px;
-    }
+        .games-section h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #BFBFBF;
+        }
 
-    .main-description {
-      font-weight: 500;
-      font-size: 1.2rem;
-      background: linear-gradient(88.93deg, #2F2F2F 10.05%, #4F4F4F 89.95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0px 13px 16.5px rgba(0, 0, 0, 0.25);
-      margin-bottom: 30px;
-    }
+        .games-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 60%;
+            margin: 30px auto;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #6C2323;
+            box-shadow: inset 0px 0px 8px #EC3939;
+            border-radius: 21px;
+            padding: 20px;
+        }
 
-    .main-video-container {
-      width: 170%;
-      max-width: 900px;
-      border-radius: 38px;
-      overflow: hidden;
-      background: rgba(21, 27, 37, 0.39);
-      box-shadow: inset 0 0 78.2px -51px #F9826D, 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(70, 70, 70, 0.3);
-    }
+        .game img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #EC3939;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), inset 0px 0px 8px #EC3939;
+        }
 
-    .features {
-      max-width: 90%;
-      margin: 80px auto;
-      text-align: center;
-    }
+        .game p {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #BFBFBF;
+        }
 
-    .features h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      text-shadow: 0px 13px 16.5px rgba(0, 0, 0, 0.25);
-      margin-bottom: 30px;
-    }
+        .features-section {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding-top: 20px;
-    }
+        .features-section h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #BFBFBF;
+        }
 
-    .feature-card {
-      background: rgba(21, 27, 37, 0.39);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 78.2px -51px #F9826D;
-      border-radius: 38px;
-      padding: 30px;
-      text-align: center;
-      border: 1px solid rgba(70, 70, 70, 0.3);
-      width: 100%;
-      height: 100%;
-      transition: transform 0.3s ease;
-    }
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            justify-items: center;
+        }
 
-    .feature-card:hover {
-      transform: translateY(-5px) scale(1.05);
-    }
+        .feature-card {
+            width: 300px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #6C2323;
+            box-shadow: inset 0px 0px 6px #EC3939;
+            border-radius: 21px;
+        }
 
-    .purchase-section {
-      max-width: 900px;
-      margin: 100px auto;
-      text-align: center;
-      padding: 0 20px;
-    }
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
 
-    .purchase-heading {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: white;
-      text-shadow: 0px 13px 16.5px rgba(0, 0, 0, 0.25);
-      line-height: 1.1;
-      margin-bottom: 30px;
-    }
+        .feature-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .purchase-box {
-      background: rgba(21, 27, 37, 0.39);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 78.2px -51px #F9826D;
-      border-radius: 38px;
-      padding: 30px;
-      border: 1px solid rgba(70, 70, 70, 0.3);
-      margin: 0 auto;
-    }
+        .feature-card ul li {
+            font-size: 14px;
+            font-weight: 400;
+            color: #BFBFBF;
+            margin-bottom: 8px;
+        }
 
-    .purchase-description {
-      font-size: 1.25rem;
-      font-weight: 500;
-      background: linear-gradient(88.93deg, #2F2F2F 10.05%, #4F4F4F 89.95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0px 13px 16.5px rgba(0, 0, 0, 0.25);
-      margin: 20px 0;
-    }
+        .showcases-section {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(21, 27, 37, 0.8);
-      border-radius: 6px;
-      box-shadow: inset 0 0 10px #F9826D;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0E1218;
-    }
+        .showcases-section h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #BFBFBF;
+        }
 
-    @media (max-width: 768px) {
-      .navbar { width: 90%; height: 50px; }
-      .main-heading { font-size: 2rem; }
-      .features h2, .purchase-heading { font-size: 2rem; }
-      .main-description, .purchase-description { font-size: 1rem; }
-      .feature-card { padding: 15px; }
-      .feature-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
-  </style>
+        .showcases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            justify-items: center;
+        }
+
+        .showcase {
+            width: 465px;
+            height: 266px;
+            background: black;
+            border: 1px solid #6C2323;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px #EC3939;
+            border-radius: 21px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .discord-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1060px;
+            margin: 80px auto;
+        }
+
+        .discord-content h1 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .discord-content p {
+            font-size: 18px;
+            color: #3D3D3D;
+        }
+
+        .discord-btn {
+            margin-top: 20px;
+            padding: 8px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            background: #EC3939;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .discord-image {
+            width: 465px;
+            height: 266px;
+            background: black;
+            border: 1px solid #6C2323;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px #EC3939;
+            border-radius: 21px;
+            overflow: hidden;
+        }
+
+        .discord-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="bg-glow ellipse1"></div>
-  <div class="bg-glow ellipse2"></div>
-  <div class="bg-glow ellipse3"></div>
-  <div class="bg-glow ellipse4"></div>
-  <div class="bg-glow ellipse5"></div>
-  <div class="bg-glow ellipse6"></div>
-
-  <nav class="navbar fade-in">
-    <div class="navbar-logo">
-      <div class="navbar-logo-circle"></div>
-      <span class="navbar-title">DoDo</span>
+    <div class="navbar">
+        <div class="brand">
+            <div class="brand-logo"></div>
+            <div class="brand-text">DoDoSoftware</div>
+        </div>
+        <div class="nav-tabs">
+            <a href="#" class="tab">Home</a>
+        </div>
+        <a href="https://discord.gg/FbZZWfM4yB" class="discord-btn">Discord</a>
     </div>
-    <div class="navbar-links">
-      <a href="#">Home</a>
-      <a href="#features">Features</a>
-      <a href="info.html">Info</a>
+
+    <div class="divider"></div>
+
+    <div class="main-section">
+        <div class="main-content">
+            <h1>Welcome to DoDo</h1>
+            <p>A Cheating Service that can provide you the best Experience Ever. Explore our list of Cheats for games Below!</p>
+            <a href="#" class="purchase-btn">Purchase</a>
+        </div>
+        <div class="video-player">
+            <iframe src="https://www.youtube.com/embed/pde68LNgZYE?si=KBldXqonhaaBzagB" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+        </div>
     </div>
-    <div class="discord-button"><a href="https://discord.gg/yYVqwexrSN" target="_blank">Discord</a></div>
-  </nav>
 
-  <section class="main-content fade-in">
-    <div class="main-text">
-      <h1 class="main-heading">Have you ever wanted to cheat in games?</h1>
-      <p class="main-description">Well, Now you can at DoDo! We Have Many Upcoming New Cheat Clients for Famous Games Such As Overwatch and PubG!</p>
-      <div class="main-buttons">
-        <a href="#features" class="button">Features</a>
-        <a href="info.html" class="button" target="_blank">Info</a>
-      </div>
+    <div class="divider"></div>
+
+    <div class="games-section">
+        <h2>List Of Games Supported</h2>
+        <div class="games-container">
+            <div class="game">
+                <img src="https://m.media-amazon.com/images/M/MV5BOGMxODVmNDgtZGE1Yy00Y2VlLTk3ZTMtYzU5YTcxODhiNzMxXkEyXkFqcGc@._V1_.jpg" alt="Overwatch">
+                <p>Overwatch</p>
+            </div>
+        </div>
     </div>
-    <div class="main-video-container">
-      <video controls width="100%">
-        <source src="showcase.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+
+    <div class="divider"></div>
+
+    <div class="features-section">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <h3>AIM FEATURES</h3>
+                <ul>
+                    <li>[+] FOV</li>
+                    <li>[+] BONE</li>
+                    <li>[+] SMOOTH X</li>
+                    <li>[+] SMOOTH Y</li>
+                    <li>[+] GHOST AIM</li>
+                    <li>[+] TARGET LOCK</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>VISUAL</h3>
+                <ul>
+                    <li>[+] Outline</li>
+                    <li>[+] Player Skeleton</li>
+                    <li>[+] Player Healthbar</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>MISC</h3>
+                <ul>
+                    <li>[+] Backtrack</li>
+                    <li>[+] Rage Mode</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="features" class="features fade-in">
-    <h2>Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>[+] Outline Projectile Color</h3>
-        <p>Enhance visibility by adjusting projectile outline colors for better tracking.</p>
-      </div>
-      <div class="feature-card">
-        <h3>[+] Player Aimpoint</h3>
-        <p>Enable custom aimpoint to assist in targeting, improving accuracy and performance.</p>
-      </div>
-      <div class="feature-card">
-        <h3>[+] Player Skeleton</h3>
-        <p>Visualize player skeletons through walls, providing strategic awareness.</p>
-      </div>
-      <div class="feature-card">
-        <h3>[+] Player Healthbar</h3>
-        <p>Display healthbars above all players, giving instant status information.</p>
-      </div>
-      <div class="feature-card">
-        <h3>[+] Server (Game) IP</h3>
-        <p>Access server IP information for network analysis and troubleshooting.</p>
-      </div>
-      <div class="feature-card">
-        <h3>[+] Rage Mode</h3>
-        <p>Activate rage mode to maximize game performance with enhanced features.</p>
-      </div>
+    <div class="divider"></div>
+
+    <div class="showcases-section">
+        <h2>Showcases</h2>
+        <div class="showcases-grid">
+            <div class="showcase">
+                <iframe src="https://streamable.com/e/vdghil"></iframe>
+            </div>
+            <div class="showcase">
+                <iframe src="https://streamable.com/e/abt9ze"></iframe>
+            </div>
+            <div class="showcase">
+                <iframe src="https://streamable.com/e/1iuns6"></iframe>
+            </div>
+            <div class="showcase">
+                <iframe src="https://streamable.com/e/0ixn4o"></iframe>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="info" class="purchase-section fade-in">
-    <h2 class="purchase-heading">Purchase</h2>
-    <div class="purchase-box">
-      <h3 class="purchase-heading">Purchase DoDo At Our Discord!</h3>
-      <p class="purchase-description">You can also meet cool new people at our discord. Make sure you have fun!</p>
-      <a href="https://discord.gg/yYVqwexrSN" class="discord-purchase-button" target="_blank">Discord</a>
+    <div class="divider"></div>
+
+    <div class="discord-section">
+        <div class="discord-content">
+            <h1>Join Our Discord To Purchase!</h1>
+            <p>A Cheating Service that can provide you the best Experience Ever.</p>
+            <a href="https://discord.gg/FbZZWfM4yB" class="discord-btn">Discord</a>
+        </div>
+        <div class="discord-image">
+            <img src="discord.png" alt="Discord Showcase">
+        </div>
     </div>
-  </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const fadeElements = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      });
-      fadeElements.forEach(el => observer.observe(el));
-    });
-
-    document.querySelectorAll('.button').forEach(button => {
-      button.style.padding = '12px 50px';
-      button.style.margin = '10px';
-    });
-
-    function randomPositionEllipses() {
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      const positions = [
-        { xRange: [0, screenWidth / 2], yRange: [0, screenHeight / 2] },
-        { xRange: [screenWidth / 2, screenWidth], yRange: [0, screenHeight / 2] },
-        { xRange: [0, screenWidth / 2], yRange: [screenHeight / 2, screenHeight] },
-        { xRange: [screenWidth / 2, screenWidth], yRange: [screenHeight / 2, screenHeight] },
-        { xRange: [screenWidth / 4, 3 * screenWidth / 4], yRange: [screenHeight / 4, 3 * screenHeight / 4] },
-        { xRange: [screenWidth / 2 - 100, screenWidth / 2 + 100], yRange: [0, screenHeight] }
-      ];
-
-      document.querySelectorAll('.bg-glow').forEach((ellipse, index) => {
-        const { xRange, yRange } = positions[index % positions.length];
-        const randomX = Math.random() * (xRange[1] - xRange[0]) + xRange[0];
-        const randomY = Math.random() * (yRange[1] - yRange[0]) + yRange[0];
-        ellipse.style.left = `${randomX}px`;
-        ellipse.style.top = `${randomY}px`;
-      });
-    }
-
-    window.onload = randomPositionEllipses;
-    window.onresize = randomPositionEllipses;
-  </script>
-
 </body>
 </html>
